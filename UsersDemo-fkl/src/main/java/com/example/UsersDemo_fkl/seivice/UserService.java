@@ -9,6 +9,5 @@ public interface UserService {
      * 查询所有用户
      */
     public List<User> findAll();
-
     void addUser(User user);
 }
