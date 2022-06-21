@@ -41,7 +41,7 @@
             <td>${user.qq}</td>
             <td>${user.email}</td>
             <td>
-                <a class="btn btn-default btn-sm" href="updata.html">修改</a>
+                <a class="btn btn-default btn-sm" href="${pageContext.request.contextPath}/FindUserServlet?id=${user.id}">修改</a>
                 <a class="btn btn-default btn-sm" href="javascript:deleteUser(${user.id})" >删除</a>
             </td>
         </tr>
