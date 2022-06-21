@@ -10,4 +10,6 @@ public interface UserService {
      */
     public List<User> findAll();
     void addUser(User user);
+
+    void deleteUser(String id);
 }

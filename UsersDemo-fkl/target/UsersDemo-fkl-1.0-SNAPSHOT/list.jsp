@@ -34,7 +34,7 @@
             <td>${user.email}</td>
             <td>
                 <a class="btn btn-default btn-sm" href="updata.html">修改</a>
-                <a class="btn btn-default btn-sm" href="#" >删除</a>
+                <a class="btn btn-default btn-sm" href="${pageContext.request.contextPath}/DeleteUserServlet?id=${user.id}" >删除</a>
             </td>
         </tr>
 

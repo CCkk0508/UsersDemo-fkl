@@ -23,4 +23,12 @@ public class UserDaoImpl implements UserDao {
         jdbcTemplate.update(sql,user.getName(),user.getSex(),user.getAge(),user.getAddress(),user.getQq(),user.getEmail());
 
     }
+
+    @Override
+    public void delete(int id) {
+        String sql = "delete from usermanager where id = ?";
+        jdbcTemplate.update(sql,id);
+    }
+
+
 }

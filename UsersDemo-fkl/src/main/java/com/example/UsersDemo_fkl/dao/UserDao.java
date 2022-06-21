@@ -9,4 +9,6 @@ public interface UserDao {
     public List<User> findAll();
 
     void add(User user);
+
+    void delete(int id);
 }
