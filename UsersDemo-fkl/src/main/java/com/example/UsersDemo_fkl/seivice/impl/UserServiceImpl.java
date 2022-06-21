@@ -14,4 +14,10 @@ public class UserServiceImpl implements UserService {
     public List<User> findAll() {
         return dao.findAll();
     }
+
+    @Override
+    public void addUser(User user) {
+
+
+    }
 }

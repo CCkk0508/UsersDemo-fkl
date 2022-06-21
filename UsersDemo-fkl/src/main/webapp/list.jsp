@@ -90,13 +90,14 @@
 <%--                <a class="btn btn-default btn-sm" href="#" >删除</a>--%>
 <%--            </td>--%>
 <%--        </tr>--%>
-<%--        <tr>--%>
-<%--            <td  colspan="8" >--%>
-<%--<!--               <button type="button" class="btn btn-primary btn-lg">添加新用户</button>-->--%>
-<%--                <a class="btn btn-primary " href="add.html">添加新用户</a>--%>
-<%--            </td>--%>
-<%--        </tr>--%>
         </c:forEach>
+        <tr>
+            <td  colspan="8" >
+             <button type="button" class="btn btn-primary btn-lg">添加新用户</button>
+                <a class="btn btn-primary " href="add.jsp">添加新用户</a>
+            </td>
+        </tr>
+
 
 
     </table>
