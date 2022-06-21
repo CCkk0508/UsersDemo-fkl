@@ -34,7 +34,7 @@
             <td>${user.email}</td>
             <td>
                 <a class="btn btn-default btn-sm" href="updata.html">修改</a>
-                <a class="btn btn-default btn-sm" href="${pageContext.request.contextPath}/DeleteUserServlet?id=${user.id}" >删除</a>
+                <a class="btn btn-default btn-sm" href="javascript:deleteUser(${user.id})" >删除</a>${pageContext.request.contextPath}/DeleteUserServlet?id=${user.id}
             </td>
         </tr>
 
@@ -104,5 +104,6 @@
 </div>
 <script type="text/javascript" src="js/jquery-2.1.0.min.js"/>
 <script type="text/javascript" src="js/bootstrap.js"/>
+<
 </body>
 </html>
