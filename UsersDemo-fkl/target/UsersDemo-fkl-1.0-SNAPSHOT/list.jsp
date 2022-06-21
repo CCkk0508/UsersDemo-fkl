@@ -8,6 +8,14 @@
     <title>用户信息管理模块</title>
     <link type="text/css"  rel="stylesheet" href="css/bootstrap.css">
     <link type="text/css"  rel="stylesheet" href="css/listcss.css">
+    <script>
+        function deleteUser(id){
+            if(confirm("您确定要删除吗?")){
+                location.href = "${pageContext.request.contextPath}/DeleteUserServlet?id="+id;
+            }
+
+        }
+    </script>
 </head>
 <body>
 <div class="container">
@@ -34,7 +42,7 @@
             <td>${user.email}</td>
             <td>
                 <a class="btn btn-default btn-sm" href="updata.html">修改</a>
-                <a class="btn btn-default btn-sm" href="${pageContext.request.contextPath}/DeleteUserServlet?id=${user.id}" >删除</a>
+                <a class="btn btn-default btn-sm" href="javascript:deleteUser(${user.id})" >删除</a>
             </td>
         </tr>
 
@@ -105,4 +113,5 @@
 <script type="text/javascript" src="js/jquery-2.1.0.min.js"/>
 <script type="text/javascript" src="js/bootstrap.js"/>
 </body>
+
 </html>
