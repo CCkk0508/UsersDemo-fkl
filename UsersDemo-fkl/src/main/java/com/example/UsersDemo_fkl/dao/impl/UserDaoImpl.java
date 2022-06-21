@@ -1,6 +1,4 @@
 package com.example.UsersDemo_fkl.dao.impl;
-
-import com.example.UsersDemo_fkl.JDBCTemplateDemo;
 import com.example.UsersDemo_fkl.dao.UserDao;
 import com.example.UsersDemo_fkl.domain.User;
 import com.example.UsersDemo_fkl.utils.JDBCUtils;
