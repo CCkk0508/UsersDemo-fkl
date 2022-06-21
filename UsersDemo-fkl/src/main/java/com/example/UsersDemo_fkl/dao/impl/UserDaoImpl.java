@@ -18,4 +18,11 @@ public class UserDaoImpl implements UserDao {
         List<User> users = jdbcTemplate.query(sql, new BeanPropertyRowMapper<User>(User.class));
         return users;
     }
+
+    @Override
+    public void add(User user) {
+        String sql = "insert into usermanager values(null,?,?,?,?,?,?)";
+        jdbcTemplate.update(sql,user.getName(),user.getSex(),user.getAge(),user.getAddress(),user.getQq(),user.getEmail());
+
+    }
 }

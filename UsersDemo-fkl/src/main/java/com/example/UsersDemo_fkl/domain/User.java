@@ -1,5 +1,7 @@
 package com.example.UsersDemo_fkl.domain;
 
+import org.springframework.jdbc.core.RowCallbackHandler;
+
 public class User {
     private Integer id;
     private String name;
