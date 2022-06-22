@@ -38,5 +38,11 @@ public class UserDaoImpl implements UserDao {
 
     }
 
+    @Override
+    public void update(User user) {
+        String sql = "update usermanager set sex=?,age=?,address=?,qq=?,email=? where id=?";
+        jdbcTemplate.update(sql,user.getSex(),user.getAge(),user.getAddress(),user.getQq(),user.getEmail(),user.getId());
+    }
+
 
 }

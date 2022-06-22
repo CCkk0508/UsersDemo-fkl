@@ -17,10 +17,11 @@
 <body>
     <div class="container">
        <h3 style="text-align: center ">修改用户信息页面</h3>
-        <form action="" method="post">
+        <form action="${pageContext.request.contextPath}/UpdateUserServlet" method="post">
+            <input type="hidden" name="id" value="${user.id}">
             <div class="form-group">
                 <label for="name">姓名 :</label>
-                <input type="text" class="form-control" id="name" placeholder="请输入姓名" readonly="readonly" value="${user.name}">
+                <input type="text" class="form-control" id="name" name="name" placeholder="请输入姓名" readonly="readonly" value="${user.name}">
             </div>
             <div class="form-group">
                 <label >姓别 :</label>
@@ -35,7 +36,7 @@
             </div>
             <div class="form-group">
                 <label for="age">年龄 :</label>
-                <input type="text" class="form-control" id="age" placeholder="请输入年龄" value="${user.age}">
+                <input type="text" class="form-control" id="age" name="age" placeholder="请输入年龄" value="${user.age}">
             </div>
             <div class="form-group">
                 <label for="address">籍贯 :</label>
@@ -59,11 +60,11 @@
             </div>
             <div class="form-group">
                 <label for="qq">QQ :</label>
-                <input type="text" class="form-control" id="qq" placeholder="请输入QQ号码" value="${user.qq}" >
+                <input type="text" class="form-control" id="qq" name="qq" placeholder="请输入QQ号码" value="${user.qq}" >
             </div>
             <div class="form-group">
                 <label for="email">邮箱 :</label>
-                <input type="text" class="form-control" id="email" placeholder="请输入邮箱地址" value="${user.email}">
+                <input type="text" class="form-control" id="email" name="email" placeholder="请输入邮箱地址" value="${user.email}">
             </div>
             <div class="form-group" style="text-align: center">
                 <input class="btn btn-primary" type="submit" value="提交">
