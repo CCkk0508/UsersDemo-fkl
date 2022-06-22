@@ -57,7 +57,7 @@ public class UserServiceImpl implements UserService {
         int totalPage = ((totalCount%rows) == 0 ? (totalCount/rows) :(totalCount/rows)+1);
         pb.setTotalPage(totalPage);
         if(currentPage > totalPage){
-            currentPage =  currentPage-1;
+            currentPage = totalPage;
         }
         pb.setCurrentPage(currentPage);
         return pb;
