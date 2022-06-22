@@ -44,5 +44,16 @@ public class UserDaoImpl implements UserDao {
         jdbcTemplate.update(sql,user.getSex(),user.getAge(),user.getAddress(),user.getQq(),user.getEmail(),user.getId());
     }
 
+    @Override
+    public int finTotalCount() {
+        String sql = "select count(*) from usermanager";
+        return jdbcTemplate.queryForObject(sql,Integer.class);
 
+    }
+
+    @Override
+    public List<User> finByPage(int start, int rows) {
+        String sql = "select * from usermanager limit ?,? ";
+       return jdbcTemplate.query(sql,new BeanPropertyRowMapper<>(User.class),start,rows);
+    }
 }

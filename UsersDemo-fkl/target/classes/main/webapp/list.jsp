@@ -34,7 +34,7 @@
             <th>邮箱</th>
             <th>操作</th>
         </tr>
-        <c:forEach items="${users}" var="user" varStatus="s">
+        <c:forEach items="${pb.list}" var="user" varStatus="s">
         <tr>
             <td>${s.count}</td>
             <td>${user.name}</td>
@@ -106,23 +106,31 @@
     <div>
         <nav aria-label="Page navigation">
             <ul class="pagination">
-                <li>
-                    <a href="#" aria-label="Previous">
+                <c:if test="${pb.currentPage == 1}">
+                <li class="disabled">
+                    </c:if>
+                        <c:if test="${pb.currentPage != 1}">
+                    <li >
+                        </c:if>
+                    <a href="${pageContext.request.contextPath}/FindUserByPageServlet?currentPage=${pb.currentPage-1}&rows=5" aria-label="Previous">
                         <span aria-hidden="true">&laquo;</span>
                     </a>
                 </li>
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
+                <c:forEach begin="1" end="${pb.totalPage}" var="i">
+                    <c:if test="${pb.currentPage == i}">
+                <li class="active"><a href="${pageContext.request.contextPath}/FindUserByPageServlet?currentPage=${i}&rows=5">${i}</a></li>
+                    </c:if>
+                    <c:if test="${pb.currentPage != i}">
+                        <li ><a href="${pageContext.request.contextPath}/FindUserByPageServlet?currentPage=${i}&rows=5">${i}</a></li>
+                    </c:if>
+                </c:forEach>
                 <li>
-                    <a href="#" aria-label="Next">
+                    <a href="${pageContext.request.contextPath}/FindUserByPageServlet?currentPage=${pb.currentPage+1}&rows=5" aria-label="Next">
                         <span aria-hidden="true">&raquo;</span>
                     </a>
                 </li>
                 <span style="font-size: 15px;margin: 5px 0 0 5px;display: inline-block">
-                    共18条记录,共4页
+                    共${pb.totalCount}条记录,共${pb.totalPage}页
                 </span>
             </ul>
         </nav>

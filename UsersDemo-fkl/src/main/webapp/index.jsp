@@ -8,6 +8,6 @@
 <h1><%= "Hello World!" %>
 </h1>
 <br/>
-<a href="${pageContext.request.contextPath}/UserListServlet">查询所有用户信息</a>
+<a href="${pageContext.request.contextPath}/FindUserByPageServlet?currentPage=1&rows=5">查询所有用户信息</a>
 </body>
 </html>

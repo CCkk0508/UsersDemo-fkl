@@ -15,4 +15,8 @@ public interface UserDao {
     User findById(int parseInt);
 
     void update(User user);
+
+    int finTotalCount();
+
+    List<User> finByPage(int start, int rows);
 }

@@ -1,5 +1,6 @@
 package com.example.UsersDemo_fkl.seivice;
 
+import com.example.UsersDemo_fkl.domain.PageBean;
 import com.example.UsersDemo_fkl.domain.User;
 
 import java.util.List;
@@ -16,4 +17,6 @@ public interface UserService {
     User findUserById(String id);
 
     void updateUser(User user);
+
+    PageBean<User> findUserByPage(String currentPage, String rows);
 }

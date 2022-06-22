@@ -2,6 +2,7 @@ package com.example.UsersDemo_fkl.seivice.impl;
 
 import com.example.UsersDemo_fkl.dao.UserDao;
 import com.example.UsersDemo_fkl.dao.impl.UserDaoImpl;
+import com.example.UsersDemo_fkl.domain.PageBean;
 import com.example.UsersDemo_fkl.domain.User;
 import com.example.UsersDemo_fkl.seivice.UserService;
 
@@ -34,5 +35,28 @@ public class UserServiceImpl implements UserService {
     @Override
     public void updateUser(User user) {
         dao.update(user);
+    }
+
+    @Override
+    public PageBean<User> findUserByPage(String xcurrentPage, String xrows) {
+        int currentPage = Integer.parseInt(xcurrentPage);
+        int rows = Integer.parseInt(xrows);
+        if(currentPage <= 0){
+            currentPage = 1;
+        }
+        PageBean<User> pb = new PageBean<>();
+        pb.setCurrentPage(currentPage);
+        pb.setRows(rows);
+        //调用dao查询总记录数
+        int totalCount = dao.finTotalCount();
+        pb.setTotalCount(totalCount);
+        //调用dao查询list集合
+        int start =  (currentPage-1)*rows;
+        List<User> list = dao.finByPage(start, rows);
+        pb.setList(list);
+        //计算总页码
+        int totalPage = ((totalCount%rows) == 0 ? (totalCount/rows) :(totalCount/rows)+1);
+        pb.setTotalPage(totalPage);
+        return pb;
     }
 }
