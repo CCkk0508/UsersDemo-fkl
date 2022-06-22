@@ -124,7 +124,12 @@
                         <li ><a href="${pageContext.request.contextPath}/FindUserByPageServlet?currentPage=${i}&rows=5">${i}</a></li>
                     </c:if>
                 </c:forEach>
-                <li>
+                    <c:if test="${pb.currentPage == pb.totalPage}">
+                <li class="disabled">
+                    </c:if>
+                        <c:if test="${pb.currentPage != pb.totalPage}">
+                    <li>
+                        </c:if>
                     <a href="${pageContext.request.contextPath}/FindUserByPageServlet?currentPage=${pb.currentPage+1}&rows=5" aria-label="Next">
                         <span aria-hidden="true">&raquo;</span>
                     </a>

@@ -45,7 +45,6 @@ public class UserServiceImpl implements UserService {
             currentPage = 1;
         }
         PageBean<User> pb = new PageBean<>();
-        pb.setCurrentPage(currentPage);
         pb.setRows(rows);
         //调用dao查询总记录数
         int totalCount = dao.finTotalCount();
@@ -57,6 +56,10 @@ public class UserServiceImpl implements UserService {
         //计算总页码
         int totalPage = ((totalCount%rows) == 0 ? (totalCount/rows) :(totalCount/rows)+1);
         pb.setTotalPage(totalPage);
+        if(currentPage > totalPage){
+            currentPage =  currentPage-1;
+        }
+        pb.setCurrentPage(currentPage);
         return pb;
     }
 }
