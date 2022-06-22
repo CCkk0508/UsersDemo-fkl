@@ -20,6 +20,9 @@
 <body>
 <div class="container">
     <h3>用户信息列表</h3>
+    <div style="float: right;margin: 5px">
+        <a class="btn btn-primary " href="add.jsp">添加新用户</a>
+    </div>
     <table border="1" class="table table-bordered table-hover">
         <tr class="success">
             <th>编号</th>
@@ -99,16 +102,31 @@
 <%--            </td>--%>
 <%--        </tr>--%>
         </c:forEach>
-        <tr>
-            <td  colspan="8" >
-<%--             <button type="button" class="btn btn-primary btn-lg">添加新用户</button>--%>
-                <a class="btn btn-primary " href="add.jsp">添加新用户</a>
-            </td>
-        </tr>
-
-
-
     </table>
+    <div>
+        <nav aria-label="Page navigation">
+            <ul class="pagination">
+                <li>
+                    <a href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li>
+                    <a href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+                <span style="font-size: 15px;margin: 5px 0 0 5px;display: inline-block">
+                    共18条记录,共4页
+                </span>
+            </ul>
+        </nav>
+    </div>
 </div>
 <script type="text/javascript" src="js/jquery-2.1.0.min.js"/>
 <script type="text/javascript" src="js/bootstrap.js"/>
