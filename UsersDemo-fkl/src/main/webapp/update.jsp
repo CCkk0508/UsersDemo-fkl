@@ -24,7 +24,7 @@
             </div>
             <div class="form-group">
                 <label >姓别 :</label>
-                <c:if test="">
+                <c:if test="${user.sex == '男'}">
                 <input type="radio" name="sex" value="男" checked="checked" />男
                 <input type="radio" name="sex" value="女"/>女
                 </c:if>
